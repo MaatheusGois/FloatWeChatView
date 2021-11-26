@@ -16,11 +16,28 @@ class ViewController: UIViewController {
         setup()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigation()
+    }
+
     fileprivate func setup() {
         title = "Safari view"
         view.backgroundColor = .white
 
         FloatViewManager.shared.setup(with: .init(string: "https://www.google.com")!)
-        FloatViewManager.shared.ballView.show = true
+        buildButton()
+    }
+
+    fileprivate func buildButton() {
+        if #available(iOS 13.0, *) {
+            addLeftBarButton(buttonImage: .actions) {
+                FloatViewManager.shared.ballView.show.toggle()
+            }
+        }
+    }
+
+    private func setupNavigation() {
+        navigationController?.navigationBar.tintColor = .systemBlue
     }
 }

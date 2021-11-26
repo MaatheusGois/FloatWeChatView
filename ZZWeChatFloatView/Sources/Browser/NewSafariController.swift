@@ -27,6 +27,11 @@ class NewSafariController: SFSafariViewController {
         setupNavigation()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        resetNavigation()
+    }
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -45,7 +50,6 @@ class NewSafariController: SFSafariViewController {
     private func setupNavigation() {
         navigationController?.navigationBar.barStyle = .black
         navigationController?.navigationBar.barTintColor = .init(hex: "131313")
-        navigationController?.navigationBar.alpha = 1
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.tintColor = .white
 
@@ -57,6 +61,13 @@ class NewSafariController: SFSafariViewController {
         addRightBarButton(buttonImage: .init(named: "compress")) { [weak self] in
             self?.navigationController?.popViewController(animated: true)
         }
+    }
+
+    private func resetNavigation() {
+        navigationController?.navigationBar.barStyle = .default
+        navigationController?.navigationBar.barTintColor = .white
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.tintColor = .black
     }
 }
 
