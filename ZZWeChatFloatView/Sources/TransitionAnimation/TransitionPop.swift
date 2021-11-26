@@ -28,7 +28,7 @@ final class TransitionPop: NSObject, UIViewControllerAnimatedTransitioning {
         containerView.addSubview(toVC.view)
         containerView.addSubview(fromVC.view)
 
-        let ballRect = FloatViewManager.manager.ballView.frame
+        let ballRect = FloatViewManager.shared.ballView.frame
         let  startAnimationPath = UIBezierPath(roundedRect: toVC.view.bounds, cornerRadius: 0.1)
         let endAnimationPath = UIBezierPath(roundedRect: ballRect, cornerRadius: ballRect.size.height/2)
 
@@ -54,6 +54,6 @@ extension TransitionPop: CAAnimationDelegate {
         transitionCtx?.view(forKey: UITransitionContextViewKey.from)?.layer.mask = nil
         transitionCtx?.view(forKey: UITransitionContextViewKey.to)?.layer.mask = nil
         /// Show ball
-        FloatViewManager.manager.ballView.show = true
+        FloatViewManager.shared.ballView.show = true
     }
 }

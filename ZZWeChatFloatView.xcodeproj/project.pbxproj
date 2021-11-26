@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E1E9F7D27515D430087006E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1E9F7C27515D430087006E /* UIViewController+Extensions.swift */; };
+		2E1E9F7F27515D810087006E /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1E9F7E27515D810087006E /* UIColor+Extensions.swift */; };
 		69C314A120CFC27700213861 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C314A020CFC27700213861 /* AppDelegate.swift */; };
 		69C314A320CFC27700213861 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C314A220CFC27700213861 /* ViewController.swift */; };
 		69C314A820CFC27900213861 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C314A720CFC27900213861 /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E1E9F7C27515D430087006E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		2E1E9F7E27515D810087006E /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		69C3149D20CFC27700213861 /* ZZWeChatFloatView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZWeChatFloatView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C314A020CFC27700213861 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69C314A220CFC27700213861 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,12 +53,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E1E9F7A27515CAC0087006E /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				69C314BC20CFD28D00213861 /* FloatChat+DesignSystem.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		2E1E9F7B27515CB60087006E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				69C314B620CFCAED00213861 /* FloatViewManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		2E9017F527513E6D000BAA98 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2E1E9F7B27515CB60087006E /* Manager */,
+				2E1E9F7A27515CAC0087006E /* DesignSystem */,
 				2E9017F727513E8A000BAA98 /* Browser */,
-				69C314BC20CFD28D00213861 /* FloatChat+DesignSystem.swift */,
-				69C314B620CFCAED00213861 /* FloatViewManager.swift */,
 				69C314C520D0EEC100213861 /* Extension */,
 				69C314C420D0EC0000213861 /* BottomView */,
 				69C314C320D0EBED00213861 /* FloatBallView */,
@@ -129,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				69C314B820CFCCEB00213861 /* CurrentTopController.swift */,
+				2E1E9F7C27515D430087006E /* UIViewController+Extensions.swift */,
+				2E1E9F7E27515D810087006E /* UIColor+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -209,6 +231,8 @@
 				69C314C020CFE05800213861 /* TransitionPush.swift in Sources */,
 				69C314B720CFCAED00213861 /* FloatViewManager.swift in Sources */,
 				69C314B920CFCCEB00213861 /* CurrentTopController.swift in Sources */,
+				2E1E9F7D27515D430087006E /* UIViewController+Extensions.swift in Sources */,
+				2E1E9F7F27515D810087006E /* UIColor+Extensions.swift in Sources */,
 				69C314C920D22F7900213861 /* FloatBallView.swift in Sources */,
 				69C314A120CFC27700213861 /* AppDelegate.swift in Sources */,
 				69C314BD20CFD28D00213861 /* FloatChat+DesignSystem.swift in Sources */,

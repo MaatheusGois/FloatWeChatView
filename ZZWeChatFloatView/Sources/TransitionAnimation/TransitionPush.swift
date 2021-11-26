@@ -18,8 +18,8 @@ class TransitionPush: NSObject, UIViewControllerAnimatedTransitioning {
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         transitionCtx = transitionContext
 
-       guard  let  fromVC = transitionContext .viewController(forKey: UITransitionContextViewControllerKey.from),
-        let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)  else {
+        guard let fromVC = transitionContext .viewController(forKey: UITransitionContextViewControllerKey.from),
+              let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) else {
             return
         }
 
@@ -27,7 +27,7 @@ class TransitionPush: NSObject, UIViewControllerAnimatedTransitioning {
         containerView.addSubview(fromVC.view)
         containerView.addSubview(toVC.view)
 
-        let ballRect = FloatViewManager.manager.ballView.frame
+        let ballRect = FloatViewManager.shared.ballView.frame
         let startAnimationPath = UIBezierPath(roundedRect: ballRect, cornerRadius: ballRect.size.height/2)
         let endAnimationPath = UIBezierPath(roundedRect: toVC.view.bounds, cornerRadius: 0.1)
 
@@ -42,6 +42,8 @@ class TransitionPush: NSObject, UIViewControllerAnimatedTransitioning {
         basicAnimation.duration = DSFloatChat.animationDuration
         basicAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         maskLayer.add(basicAnimation, forKey: "pathAnimation")
+        /// Hidden ball
+        FloatViewManager.shared.ballView.show = false
     }
 }
 
@@ -49,10 +51,8 @@ class TransitionPush: NSObject, UIViewControllerAnimatedTransitioning {
 
 extension TransitionPush: CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-       transitionCtx?.completeTransition(true)
+        transitionCtx?.completeTransition(true)
         transitionCtx?.view(forKey: UITransitionContextViewKey.from)?.layer.mask = nil
         transitionCtx?.view(forKey: UITransitionContextViewKey.to)?.layer.mask = nil
-        /// Hidden ball
-        FloatViewManager.manager.ballView.show = false
     }
 }

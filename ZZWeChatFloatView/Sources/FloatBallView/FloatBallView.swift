@@ -17,7 +17,7 @@ protocol FloatViewDelegate: NSObjectProtocol {
 class FloatBallView: UIView {
 
     weak var delegate: FloatViewDelegate?
-    var ballDidSelect : (() -> Void)?
+    var ballDidSelect: (() -> Void)?
 
     fileprivate var beginPoint: CGPoint?
 
@@ -25,16 +25,16 @@ class FloatBallView: UIView {
         didSet {
             if show {
                 DSFloatChat.window?.addSubview(self)
-                self.alpha = 0.0
-                UIView.animate(withDuration: 0.5) {
+                self.alpha = .zero
+                UIView.animate(withDuration: DSFloatChat.animationDuration) {
                     self.alpha = 1.0
                 }
             } else {
                 self.alpha = 1.0
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.alpha = 0.0
+                UIView.animate(withDuration: DSFloatChat.animationDuration, animations: {
+                    self.alpha = .zero
                 }) { (_) in
-                    // self.removeFromSuperview()
+                     self.removeFromSuperview()
                 }
             }
         }
@@ -64,7 +64,7 @@ fileprivate extension FloatBallView {
     }
 
     func setUp() {
-        backgroundColor = UIColor.black
+        backgroundColor = .blue
         layer.masksToBounds = true
         alpha = 0.0
     }

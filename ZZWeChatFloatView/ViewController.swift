@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         title = "Safari view"
         view.backgroundColor = .white
 
-        FloatViewManager.manager.ballView.show = true
+        FloatViewManager.shared.setup(with: .init(string: "https://www.google.com")!)
+        FloatViewManager.shared.ballView.show = true
     }
 }

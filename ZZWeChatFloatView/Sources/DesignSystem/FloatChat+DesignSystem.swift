@@ -9,7 +9,7 @@
 import UIKit
 
 struct DSFloatChat {
-    static let animationDuration = 0.5
+    static let animationDuration = 0.3
     static let animationCancelMoveDuration = 0.35
 
     static let screenWidth: CGFloat = UIScreen.main.bounds.width
