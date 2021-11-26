@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = navigation
         self.window?.makeKeyAndVisible()
 
-        let viewControllerName = "\(NewDetailController.self)"
+        let viewControllerName = "\(NewSafariController.self)"
 
         FloatViewManager.manager.addFloatClass(in: [viewControllerName])
 

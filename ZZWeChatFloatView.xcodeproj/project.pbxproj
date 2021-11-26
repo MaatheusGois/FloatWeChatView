@@ -11,8 +11,7 @@
 		69C314A320CFC27700213861 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C314A220CFC27700213861 /* ViewController.swift */; };
 		69C314A820CFC27900213861 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C314A720CFC27900213861 /* Assets.xcassets */; };
 		69C314AB20CFC27900213861 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69C314A920CFC27900213861 /* LaunchScreen.storyboard */; };
-		69C314B320CFC6D100213861 /* SingleKindListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C314B220CFC6D100213861 /* SingleKindListController.swift */; };
-		69C314B520CFC9F300213861 /* NewDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C314B420CFC9F300213861 /* NewDetailController.swift */; };
+		69C314B520CFC9F300213861 /* NewSafariController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C314B420CFC9F300213861 /* NewSafariController.swift */; };
 		69C314B720CFCAED00213861 /* FloatViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C314B620CFCAED00213861 /* FloatViewManager.swift */; };
 		69C314B920CFCCEB00213861 /* CurrentTopController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C314B820CFCCEB00213861 /* CurrentTopController.swift */; };
 		69C314BD20CFD28D00213861 /* FloatChat+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C314BC20CFD28D00213861 /* FloatChat+DesignSystem.swift */; };
@@ -29,8 +28,7 @@
 		69C314A720CFC27900213861 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69C314AA20CFC27900213861 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		69C314AC20CFC27900213861 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		69C314B220CFC6D100213861 /* SingleKindListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleKindListController.swift; sourceTree = "<group>"; };
-		69C314B420CFC9F300213861 /* NewDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDetailController.swift; sourceTree = "<group>"; };
+		69C314B420CFC9F300213861 /* NewSafariController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSafariController.swift; sourceTree = "<group>"; };
 		69C314B620CFCAED00213861 /* FloatViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatViewManager.swift; sourceTree = "<group>"; };
 		69C314B820CFCCEB00213861 /* CurrentTopController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTopController.swift; sourceTree = "<group>"; };
 		69C314BC20CFD28D00213861 /* FloatChat+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloatChat+DesignSystem.swift"; sourceTree = "<group>"; };
@@ -51,6 +49,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E9017F527513E6D000BAA98 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2E9017F727513E8A000BAA98 /* Browser */,
+				69C314BC20CFD28D00213861 /* FloatChat+DesignSystem.swift */,
+				69C314B620CFCAED00213861 /* FloatViewManager.swift */,
+				69C314C520D0EEC100213861 /* Extension */,
+				69C314C420D0EC0000213861 /* BottomView */,
+				69C314C320D0EBED00213861 /* FloatBallView */,
+				69C314BE20CFD32300213861 /* TransitionAnimation */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2E9017F727513E8A000BAA98 /* Browser */ = {
+			isa = PBXGroup;
+			children = (
+				69C314B420CFC9F300213861 /* NewSafariController.swift */,
+			);
+			path = Browser;
+			sourceTree = "<group>";
+		};
 		69C3149420CFC27600213861 = {
 			isa = PBXGroup;
 			children = (
@@ -70,16 +90,9 @@
 		69C3149F20CFC27700213861 /* ZZWeChatFloatView */ = {
 			isa = PBXGroup;
 			children = (
-				69C314BC20CFD28D00213861 /* FloatChat+DesignSystem.swift */,
-				69C314B620CFCAED00213861 /* FloatViewManager.swift */,
-				69C314C520D0EEC100213861 /* Extension */,
-				69C314C420D0EC0000213861 /* BottomView */,
-				69C314C320D0EBED00213861 /* FloatBallView */,
-				69C314BE20CFD32300213861 /* TransitionAnimation */,
+				2E9017F527513E6D000BAA98 /* Sources */,
 				69C314A020CFC27700213861 /* AppDelegate.swift */,
 				69C314A220CFC27700213861 /* ViewController.swift */,
-				69C314B220CFC6D100213861 /* SingleKindListController.swift */,
-				69C314B420CFC9F300213861 /* NewDetailController.swift */,
 				69C314A720CFC27900213861 /* Assets.xcassets */,
 				69C314A920CFC27900213861 /* LaunchScreen.storyboard */,
 				69C314AC20CFC27900213861 /* Info.plist */,
@@ -192,12 +205,11 @@
 			files = (
 				69C314C720D116CA00213861 /* BottomFloatView.swift in Sources */,
 				69C314A320CFC27700213861 /* ViewController.swift in Sources */,
-				69C314B520CFC9F300213861 /* NewDetailController.swift in Sources */,
+				69C314B520CFC9F300213861 /* NewSafariController.swift in Sources */,
 				69C314C020CFE05800213861 /* TransitionPush.swift in Sources */,
 				69C314B720CFCAED00213861 /* FloatViewManager.swift in Sources */,
 				69C314B920CFCCEB00213861 /* CurrentTopController.swift in Sources */,
 				69C314C920D22F7900213861 /* FloatBallView.swift in Sources */,
-				69C314B320CFC6D100213861 /* SingleKindListController.swift in Sources */,
 				69C314A120CFC27700213861 /* AppDelegate.swift in Sources */,
 				69C314BD20CFD28D00213861 /* FloatChat+DesignSystem.swift in Sources */,
 				69C314C220CFE06D00213861 /* TransitionPop.swift in Sources */,

@@ -33,14 +33,14 @@ final class FloatViewManager: NSObject {
     }
 
     func setup() {
-        bFloatView.frame = .init(x: DSFloatChat.screenWidth, y: DSFloatChat.screenHeight, width: DSFloatChat.kBottomViewFloatWidth, height: DSFloatChat.kBottomViewFloatHeight)
-        DSFloatChat.kWindow?.addSubview(bFloatView)
+        bFloatView.frame = .init(x: DSFloatChat.screenWidth, y: DSFloatChat.screenHeight, width: DSFloatChat.bottomViewFloatWidth, height: DSFloatChat.bottomViewFloatHeight)
+        DSFloatChat.window?.addSubview(bFloatView)
 
-        ballRedCancelView.frame = .init(x: DSFloatChat.screenWidth, y: DSFloatChat.screenHeight, width: DSFloatChat.kBottomViewFloatWidth, height: DSFloatChat.kBottomViewFloatHeight)
+        ballRedCancelView.frame = .init(x: DSFloatChat.screenWidth, y: DSFloatChat.screenHeight, width: DSFloatChat.bottomViewFloatWidth, height: DSFloatChat.bottomViewFloatHeight)
         ballRedCancelView.type = BottomFloatViewType.red
-        DSFloatChat.kWindow?.addSubview(ballRedCancelView)
+        DSFloatChat.window?.addSubview(ballRedCancelView)
 
-        ballView.frame = DSFloatChat.kBallRect
+        ballView.frame = DSFloatChat.ballRect
         ballView.delegate = self
     }
 
@@ -117,21 +117,21 @@ extension FloatViewManager {
 
     @objc func displayLinkLoop() {
         if edgeGesture?.state == UIGestureRecognizerState.changed {
-            guard let startP = edgeGesture?.location(in: DSFloatChat.kWindow) else {
+            guard let startP = edgeGesture?.location(in: DSFloatChat.window) else {
                 return
             }
 
-            let originX: CGFloat = max(DSFloatChat.screenWidth - startP.x, DSFloatChat.kBvfMinX)
-            let originY: CGFloat = max(DSFloatChat.screenHeight - startP.x, DSFloatChat.kBvMinY)
+            let originX: CGFloat = max(DSFloatChat.screenWidth - startP.x, DSFloatChat.minX)
+            let originY: CGFloat = max(DSFloatChat.screenHeight - startP.x, DSFloatChat.minY)
 
-            bFloatView.frame = CGRect(x: originX, y: originY, width: DSFloatChat.kBottomViewFloatWidth, height: DSFloatChat.kBottomViewFloatHeight)
+            bFloatView.frame = CGRect(x: originX, y: originY, width: DSFloatChat.bottomViewFloatWidth, height: DSFloatChat.bottomViewFloatHeight)
 
-            guard  let transformBottomP = DSFloatChat.kWindow?.convert(startP, to: bFloatView) else {
+            guard  let transformBottomP = DSFloatChat.window?.convert(startP, to: bFloatView) else {
                 return
             }
 
             if transformBottomP.x > .zero && transformBottomP.y > .zero {
-                let arcCenter = CGPoint(x: DSFloatChat.kBottomViewFloatWidth, y: DSFloatChat.kBottomViewFloatHeight)
+                let arcCenter = CGPoint(x: DSFloatChat.bottomViewFloatWidth, y: DSFloatChat.bottomViewFloatHeight)
                 let distance = pow((transformBottomP.x - arcCenter.x), 2) + pow((transformBottomP.y - arcCenter.y), 2)
                 let onArc = pow(arcCenter.x, 2)
                 if distance <= onArc {
@@ -155,13 +155,13 @@ extension FloatViewManager {
                 tempCurrentFloatVC = nil
                 ballView.show = true
 
-                if let newDetailVC = currentFloatViewController as? NewDetailController {
+                if let newDetailVC = currentFloatViewController as? NewSafariController {
                     ballView.backgroundColor = newDetailVC.themeColor
                 }
             }
 
             UIView.animate(withDuration: DSFloatChat.animationDuration, animations: {
-                self.bFloatView.frame = CGRect(x: DSFloatChat.screenWidth, y: DSFloatChat.screenHeight, width: DSFloatChat.kBottomViewFloatWidth, height: DSFloatChat.kBottomViewFloatHeight)
+                self.bFloatView.frame = CGRect(x: DSFloatChat.screenWidth, y: DSFloatChat.screenHeight, width: DSFloatChat.bottomViewFloatWidth, height: DSFloatChat.bottomViewFloatHeight)
             }) { (_) in
 
             }
@@ -173,19 +173,19 @@ extension FloatViewManager {
 extension FloatViewManager: FloatViewDelegate {
     func floatViewBeginMove(floatView: FloatBallView, point: CGPoint) {
         UIView.animate(withDuration: 0.2, animations: {
-            self.ballRedCancelView.frame = CGRect(x: DSFloatChat.screenWidth - DSFloatChat.kBottomViewFloatWidth, y: DSFloatChat.screenHeight - DSFloatChat.kBottomViewFloatHeight, width: DSFloatChat.kBottomViewFloatWidth, height: DSFloatChat.kBottomViewFloatHeight)
+            self.ballRedCancelView.frame = CGRect(x: DSFloatChat.screenWidth - DSFloatChat.bottomViewFloatWidth, y: DSFloatChat.screenHeight - DSFloatChat.bottomViewFloatHeight, width: DSFloatChat.bottomViewFloatWidth, height: DSFloatChat.bottomViewFloatHeight)
         }) { (_) in
 
         }
     }
 
     func floatViewMoved(floatView: FloatBallView, point: CGPoint) {
-        guard  let transformBottomP = DSFloatChat.kWindow?.convert(ballView.center, to: ballRedCancelView) else {
+        guard  let transformBottomP = DSFloatChat.window?.convert(ballView.center, to: ballRedCancelView) else {
             return
         }
 
         if transformBottomP.x > .zero && transformBottomP.y > .zero {
-            let arcCenter = CGPoint(x: DSFloatChat.kBottomViewFloatWidth, y: DSFloatChat.kBottomViewFloatHeight)
+            let arcCenter = CGPoint(x: DSFloatChat.bottomViewFloatWidth, y: DSFloatChat.bottomViewFloatHeight)
             let distance = pow((transformBottomP.x - arcCenter.x), 2) + pow((transformBottomP.y - arcCenter.y), 2)
             let onArc = pow(arcCenter.x, 2)
 
@@ -216,8 +216,8 @@ extension FloatViewManager: FloatViewDelegate {
             self.ballRedCancelView.frame = .init(
                 x: DSFloatChat.screenWidth,
                 y: DSFloatChat.screenHeight,
-                width: DSFloatChat.kBottomViewFloatWidth,
-                height: DSFloatChat.kBottomViewFloatHeight
+                width: DSFloatChat.bottomViewFloatWidth,
+                height: DSFloatChat.bottomViewFloatHeight
             )
         }) { (_) in
 

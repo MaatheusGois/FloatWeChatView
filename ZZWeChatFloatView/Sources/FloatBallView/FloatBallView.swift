@@ -24,7 +24,7 @@ class FloatBallView: UIView {
     var show: Bool = false {
         didSet {
             if show {
-                DSFloatChat.kWindow?.addSubview(self)
+                DSFloatChat.window?.addSubview(self)
                 self.alpha = 0.0
                 UIView.animate(withDuration: 0.5) {
                     self.alpha = 1.0
@@ -119,36 +119,36 @@ extension FloatBallView {
 
         if marginTop < 60 {
             if marginLeft < marginRight {
-                if marginLeft < DSFloatChat.kPadding {
-                    tempX = DSFloatChat.kPadding
+                if marginLeft < DSFloatChat.padding {
+                    tempX = DSFloatChat.padding
                 } else {
                     tempX = frame.minX
                 }
             } else {
-                if marginRight < DSFloatChat.kPadding {
-                    tempX = superview.frame.width - frame.width - DSFloatChat.kPadding
+                if marginRight < DSFloatChat.padding {
+                    tempX = superview.frame.width - frame.width - DSFloatChat.padding
                 } else {
                     tempX = frame.minX
                 }
             }
-            destinationFrame = CGRect(x: tempX, y: DSFloatChat.kPadding, width: DSFloatChat.kBallRect.width, height: DSFloatChat.kBallRect.height)
+            destinationFrame = .init(x: tempX, y: DSFloatChat.padding + DSFloatChat.topSafeAreaPadding, width: DSFloatChat.ballRect.width, height: DSFloatChat.ballRect.height)
         } else if marginBottom < 60 {
             if marginLeft < marginRight {
-                if marginLeft < DSFloatChat.kPadding {
-                    tempX = DSFloatChat.kPadding
+                if marginLeft < DSFloatChat.padding {
+                    tempX = DSFloatChat.padding
                 } else {
                     tempX = frame.minX
                 }
             } else {
-                if marginRight < DSFloatChat.kPadding {
-                    tempX = superview.frame.width - frame.width - DSFloatChat.kPadding
+                if marginRight < DSFloatChat.padding {
+                    tempX = superview.frame.width - frame.width - DSFloatChat.padding
                 } else {
                     tempX = frame.minX
                 }
             }
-            destinationFrame = CGRect(x: tempX, y: superview.frame.height - frame.height-DSFloatChat.kPadding, width: DSFloatChat.kBallRect.width, height: DSFloatChat.kBallRect.height)
+            destinationFrame = CGRect(x: tempX, y: superview.frame.height - frame.height-DSFloatChat.padding-DSFloatChat.bottomSafeAreaPadding, width: DSFloatChat.ballRect.width, height: DSFloatChat.ballRect.height)
         } else {
-            destinationFrame = CGRect(x: marginLeft < marginRight ? DSFloatChat.kPadding:superview.frame.width - frame.width-DSFloatChat.kPadding, y: frame.minY, width: DSFloatChat.kBallRect.width, height: DSFloatChat.kBallRect.height)
+            destinationFrame = CGRect(x: marginLeft < marginRight ? DSFloatChat.padding : superview.frame.width - frame.width-DSFloatChat.padding, y: frame.minY, width: DSFloatChat.ballRect.width, height: DSFloatChat.ballRect.height)
         }
 
         UIView.animate(withDuration: DSFloatChat.animationDuration, animations: {

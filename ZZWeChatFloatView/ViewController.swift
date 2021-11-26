@@ -9,43 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-    lazy var tableView = UITableView(frame: view.bounds, style: UITableViewStyle.plain)
-    let newsArray = ["Technology", "Interesting life", "Entertainment", "Music"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "WeChat friends"
-        view.backgroundColor = UIColor.red
 
-        setUp()
+        setup()
     }
 
-   fileprivate func setUp() {
-        tableView.rowHeight = 60.0
-        view.addSubview(tableView)
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
-}
+    fileprivate func setup() {
+        title = "Safari view"
+        view.backgroundColor = .white
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let identifier = "identifier"
-        var cell = tableView.dequeueReusableCell(withIdentifier: identifier)
-        if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: identifier)
-        }
-        cell?.textLabel?.text = newsArray[indexPath.row]
-        return cell!
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return newsArray.count
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       tableView.deselectRow(at: indexPath, animated: true)
-        let singleVC = SingleKindListController()
-        singleVC.title = newsArray[indexPath.row]
-        navigationController?.pushViewController(singleVC, animated: true)
+        FloatViewManager.manager.ballView.show = true
     }
 }
