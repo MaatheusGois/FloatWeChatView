@@ -61,24 +61,23 @@
 			path = DesignSystem;
 			sourceTree = "<group>";
 		};
-		2E1E9F7B27515CB60087006E /* Manager */ = {
+		2E1E9F7B27515CB60087006E /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				69C314B620CFCAED00213861 /* FloatViewManager.swift */,
 			);
-			path = Manager;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		2E9017F527513E6D000BAA98 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2E1E9F7B27515CB60087006E /* Manager */,
+				2E1E9F7B27515CB60087006E /* Managers */,
 				2E1E9F7A27515CAC0087006E /* DesignSystem */,
 				2E9017F727513E8A000BAA98 /* Browser */,
-				69C314C520D0EEC100213861 /* Extension */,
-				69C314C420D0EC0000213861 /* BottomView */,
-				69C314C320D0EBED00213861 /* FloatBallView */,
-				69C314BE20CFD32300213861 /* TransitionAnimation */,
+				69C314C520D0EEC100213861 /* Extensions */,
+				82990AF227529A95006539F8 /* Views */,
+				69C314BE20CFD32300213861 /* TransitionAnimations */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -120,13 +119,13 @@
 			path = ZZWeChatFloatView;
 			sourceTree = "<group>";
 		};
-		69C314BE20CFD32300213861 /* TransitionAnimation */ = {
+		69C314BE20CFD32300213861 /* TransitionAnimations */ = {
 			isa = PBXGroup;
 			children = (
 				69C314BF20CFE05800213861 /* TransitionPush.swift */,
 				69C314C120CFE06D00213861 /* TransitionPop.swift */,
 			);
-			path = TransitionAnimation;
+			path = TransitionAnimations;
 			sourceTree = "<group>";
 		};
 		69C314C320D0EBED00213861 /* FloatBallView */ = {
@@ -145,14 +144,23 @@
 			path = BottomView;
 			sourceTree = "<group>";
 		};
-		69C314C520D0EEC100213861 /* Extension */ = {
+		69C314C520D0EEC100213861 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				69C314B820CFCCEB00213861 /* CurrentTopController.swift */,
 				2E1E9F7C27515D430087006E /* UIViewController+Extensions.swift */,
 				2E1E9F7E27515D810087006E /* UIColor+Extensions.swift */,
 			);
-			path = Extension;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		82990AF227529A95006539F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				69C314C420D0EC0000213861 /* BottomView */,
+				69C314C320D0EBED00213861 /* FloatBallView */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
