@@ -55,7 +55,7 @@ class NewSafariController: SFSafariViewController {
 
         addLeftBarButton(buttonImage: .init(named: "close")) { [weak self] in
             self?.navigationController?.popViewController(animated: true) {
-                FloatViewManager.shared.ballView.show = false
+                FloatViewManager.shared.ballView.changeStatusInNextTransaction = false
             }
         }
 
@@ -69,6 +69,12 @@ class NewSafariController: SFSafariViewController {
         navigationController?.navigationBar.barTintColor = .white
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.tintColor = .black
+    }
+
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        navigationController?.popViewController(animated: true) {
+            FloatViewManager.shared.ballView.changeStatusInNextTransaction = false
+        }
     }
 }
 

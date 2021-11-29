@@ -43,7 +43,11 @@ class TransitionPush: NSObject, UIViewControllerAnimatedTransitioning {
         basicAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         maskLayer.add(basicAnimation, forKey: "pathAnimation")
         /// Hidden ball
-        FloatViewManager.shared.ballView.show = false
+        if FloatViewManager.shared.ballView.changeStatusInNextTransaction {
+            FloatViewManager.shared.ballView.show = false
+        } else {
+            FloatViewManager.shared.ballView.changeStatusInNextTransaction = true
+        }
     }
 }
 

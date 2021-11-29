@@ -54,6 +54,10 @@ extension TransitionPop: CAAnimationDelegate {
         transitionCtx?.view(forKey: UITransitionContextViewKey.from)?.layer.mask = nil
         transitionCtx?.view(forKey: UITransitionContextViewKey.to)?.layer.mask = nil
         /// Show ball
-        FloatViewManager.shared.ballView.show = true
+        if FloatViewManager.shared.ballView.changeStatusInNextTransaction {
+            FloatViewManager.shared.ballView.show = true
+        } else {
+            FloatViewManager.shared.ballView.changeStatusInNextTransaction = true
+        }
     }
 }

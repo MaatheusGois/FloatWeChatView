@@ -21,8 +21,11 @@ class FloatBallView: UIView {
 
     fileprivate var beginPoint: CGPoint?
 
+    var changeStatusInNextTransaction: Bool = true
+
     var show: Bool = false {
         didSet {
+            guard oldValue != show else { return }
             if show {
                 DSFloatChat.window?.addSubview(self)
                 self.alpha = .zero
