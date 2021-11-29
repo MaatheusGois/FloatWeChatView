@@ -54,8 +54,9 @@ class NewSafariController: SFSafariViewController {
         navigationController?.navigationBar.tintColor = .white
 
         addLeftBarButton(buttonImage: .init(named: "close")) { [weak self] in
-            self?.navigationController?.popViewController(animated: true)
-            FloatViewManager.shared.ballView.show = false
+            self?.navigationController?.popViewController(animated: true) {
+                FloatViewManager.shared.ballView.show = false
+            }
         }
 
         addRightBarButton(buttonImage: .init(named: "compress")) { [weak self] in
