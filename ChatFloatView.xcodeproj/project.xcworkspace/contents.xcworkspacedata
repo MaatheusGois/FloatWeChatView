@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ZZWeChatFloatView.xcodeproj">
+      location = "self:ChatFloatView.xcodeproj">
    </FileRef>
 </Workspace>

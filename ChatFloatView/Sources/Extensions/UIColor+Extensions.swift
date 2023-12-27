@@ -1,6 +1,6 @@
 //
 //  UIColor+Extensions.swift
-//  ZZWeChatFloatView
+//  ChatFloatView
 //
 //  Created by Matheus Gois on 26/11/21.
 //  Copyright © 2021 apple. All rights reserved.

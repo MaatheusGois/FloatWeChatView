@@ -1,9 +1,9 @@
 //
 //  NewDetailController.swift
-//  ZZWeChatFloatView
+//  ChatFloatView
 //
-//  Created by 周晓瑞 on 2018/6/12.
-//  Copyright © 2018年 apple. All rights reserved.
+//  Created by Matheus Gois 2023/12/27.
+//  Copyright © 2023 Matheus Gois. All rights reserved.
 //
 
 import SafariServices

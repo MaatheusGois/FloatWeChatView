@@ -26,7 +26,7 @@
 /* Begin PBXFileReference section */
 		2E1E9F7C27515D430087006E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		2E1E9F7E27515D810087006E /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		69C3149D20CFC27700213861 /* ZZWeChatFloatView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZWeChatFloatView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69C3149D20CFC27700213861 /* ChatFloatView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatFloatView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C314A020CFC27700213861 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69C314A220CFC27700213861 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		69C314A720CFC27900213861 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,7 +74,6 @@
 			children = (
 				2E1E9F7B27515CB60087006E /* Managers */,
 				2E1E9F7A27515CAC0087006E /* DesignSystem */,
-				2E9017F727513E8A000BAA98 /* Browser */,
 				69C314C520D0EEC100213861 /* Extensions */,
 				82990AF227529A95006539F8 /* Views */,
 				69C314BE20CFD32300213861 /* TransitionAnimations */,
@@ -93,7 +92,7 @@
 		69C3149420CFC27600213861 = {
 			isa = PBXGroup;
 			children = (
-				69C3149F20CFC27700213861 /* ZZWeChatFloatView */,
+				69C3149F20CFC27700213861 /* ChatFloatView */,
 				69C3149E20CFC27700213861 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,14 +100,15 @@
 		69C3149E20CFC27700213861 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				69C3149D20CFC27700213861 /* ZZWeChatFloatView.app */,
+				69C3149D20CFC27700213861 /* ChatFloatView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		69C3149F20CFC27700213861 /* ZZWeChatFloatView */ = {
+		69C3149F20CFC27700213861 /* ChatFloatView */ = {
 			isa = PBXGroup;
 			children = (
+				2E9017F727513E8A000BAA98 /* Browser */,
 				2E9017F527513E6D000BAA98 /* Sources */,
 				69C314A020CFC27700213861 /* AppDelegate.swift */,
 				69C314A220CFC27700213861 /* ViewController.swift */,
@@ -116,7 +116,7 @@
 				69C314A920CFC27900213861 /* LaunchScreen.storyboard */,
 				69C314AC20CFC27900213861 /* Info.plist */,
 			);
-			path = ZZWeChatFloatView;
+			path = ChatFloatView;
 			sourceTree = "<group>";
 		};
 		69C314BE20CFD32300213861 /* TransitionAnimations */ = {
@@ -166,9 +166,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		69C3149C20CFC27600213861 /* ZZWeChatFloatView */ = {
+		69C3149C20CFC27600213861 /* ChatFloatView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69C314AF20CFC27900213861 /* Build configuration list for PBXNativeTarget "ZZWeChatFloatView" */;
+			buildConfigurationList = 69C314AF20CFC27900213861 /* Build configuration list for PBXNativeTarget "ChatFloatView" */;
 			buildPhases = (
 				69C3149920CFC27600213861 /* Sources */,
 				69C3149A20CFC27600213861 /* Frameworks */,
@@ -178,9 +178,9 @@
 			);
 			dependencies = (
 			);
-			name = ZZWeChatFloatView;
-			productName = ZZWeChatFloatView;
-			productReference = 69C3149D20CFC27700213861 /* ZZWeChatFloatView.app */;
+			name = ChatFloatView;
+			productName = ChatFloatView;
+			productReference = 69C3149D20CFC27700213861 /* ChatFloatView.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -199,7 +199,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 69C3149820CFC27600213861 /* Build configuration list for PBXProject "ZZWeChatFloatView" */;
+			buildConfigurationList = 69C3149820CFC27600213861 /* Build configuration list for PBXProject "ChatFloatView" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -212,7 +212,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				69C3149C20CFC27600213861 /* ZZWeChatFloatView */,
+				69C3149C20CFC27600213861 /* ChatFloatView */,
 			);
 		};
 /* End PBXProject section */
@@ -383,12 +383,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9424788LV8;
-				INFOPLIST_FILE = ZZWeChatFloatView/Info.plist;
+				INFOPLIST_FILE = ChatFloatView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ta.ZZWeChatFloatView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ta.ChatFloatView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -401,12 +401,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9424788LV8;
-				INFOPLIST_FILE = ZZWeChatFloatView/Info.plist;
+				INFOPLIST_FILE = ChatFloatView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ta.ZZWeChatFloatView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ta.ChatFloatView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -416,7 +416,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		69C3149820CFC27600213861 /* Build configuration list for PBXProject "ZZWeChatFloatView" */ = {
+		69C3149820CFC27600213861 /* Build configuration list for PBXProject "ChatFloatView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69C314AD20CFC27900213861 /* Debug */,
@@ -425,7 +425,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69C314AF20CFC27900213861 /* Build configuration list for PBXNativeTarget "ZZWeChatFloatView" */ = {
+		69C314AF20CFC27900213861 /* Build configuration list for PBXNativeTarget "ChatFloatView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69C314B020CFC27900213861 /* Debug */,
